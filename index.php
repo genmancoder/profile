@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<meta charset="utf-8">
+	
+	<title>John Paulin - Web + Design + Development</title>
+	
+	
+	<link href="styles/style.css" rel="stylesheet" type="text/css" media="screen">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,300,500">
+	<link rel="stylesheet" href="js/magnific-popup.css"> 
+	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	 <script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	
+
+	
+	$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+
+
+$(window).bind("load resize scroll",function(e) {
+    var y = $(window).scrollTop();
+ 
+    $(".hero-image").filter(function() {
+        return $(this).offset().top < (y + $(window).height()) &&
+               $(this).offset().top + $(this).height() > y;
+    }).css('background-position', '0px ' + parseInt(-y / 6) + 'px');
+});
+
+
+$(document).ready(function(){
+	var $window = $(window);
+	
+    $('section[data-type="background"]').each(function(){
+        var $bgobj = $(this); // assigning the object
+		
+		
+		   $(window).scroll(function() {
+                    
+		// Scroll the background at var speed
+		// the yPos is a negative value because we're scrolling it UP!								
+		var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
+		
+		// Put together our final background position
+		var coords = '50% '+ yPos + 'px';
+
+		// Move the background
+		$bgobj.css({ backgroundPosition: coords });
+		
+}); // window scroll Ends
+        
+    });    
+});
+
+
+
+
+	</script>
+	
+	</head>
+	
+	
+	<body>
+	
+		<header>
+		
+		
+			<div class="container clearfix">
+			
+				<a href="#top" title="Return to Home Page=" id="logo">
+				<img src="images/logo.png"/>
+				</a>
+				
+		
+				<nav>
+				<?php
+					if(isset($_get['page'])){
+						$page = $_get['page'];
+					}else{						
+						$page = 1;						
+					}
+				
+				?>
+			
+					<ul>
+						<li> <a href="#home"<?php if ($page == 1) echo ' class="active"'; ?>>Home</a></li>
+						<li> <a href="#about"<?php if ($page == 2) echo ' class="active"'; ?>>About</a></li>
+						<li> <a href="#portfolio"<?php if ($page == 3) echo ' class="active"'; ?>>Portfolio</a></li>
+						<li> <a href="#resume"<?php if ($page == 3) echo ' class="active"'; ?>>Resume</a></li>		
+
+					
+					
+					</ul>
+				
+				</nav>
+			</div>
+		
+					
+		
+		
+		
+		
+		</header>
+		
+		<div class="brain">
+		<div  id="top" ></div>	
+	
+		
+			<div id="hero">
+			<div id="home" class="container clearfix">
+			
+			<div id="hero-title">		
+				
+					
+					
+					<section id="column-content">
+				
+				
+					<div class="text-designer" style="opacity: 1;">
+                    <h2>+ Designer</h2>
+                    <p class="p-designer">Create designs with the client's perception in mind and  always place your client’s customers at the heart of the user experience.</p>
+                    <div class="pointer"></div>
+					</div>
+					
+					<div class="text-coder" style="opacity: 1;">
+                    <h2>+ Frontend Coder</h2>
+                    <p class="p-coder">With my skills in front-end web technologies such as HTML5, CSS3 and Javascript/jQuery, I can create a flexible and responsive design.</p>
+                    <div class="pointer"></div>
+					</div>	
+					<div class="text-bcoder" style="opacity: 1;">
+                    <h2>+ Backend Developer</h2>
+                    <p class="p-bcoder">I have vast experience in back-end web technologies such as PHP and MySQL to create multi-functional web portals</p>
+                    <div class="pointer"></div>
+                
+                </div>
+				
+				
+				
+			
+				
+				</section><!--- end column-content -->
+					
+				</div> <!-- end of hero-title -->
+			
+			
+			
+			
+			<section class="brush" data-type="background" data-speed="10"  >
+				
+			</section>	
+			
+			</div>			
+				<div class="container clearfix">
+					<section id="hero-image" data-type="background" data-speed="10"  >								
+						<article>Simple Parallax Scroll</article>
+					</section>
+				</div>
+			</div> <!--- end hero -->	
+			
+			
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<div class="container clearfix">
+						<div id="about" class="targets"></div>
+						<div><h2 class="head-title ">About Me</h2></div>
+						<section id="mycontent">						
+						<div class="new_content">						
+							
+							
+							<p class="about">I have over 10 years of experience in web design and development and have been part of variety of projects including web and mobile landing pages.
+							I am a web designer with a passion for designing clean and functional websites. I design websites or graphics based on client's specification.</p>
+							<p class="about">I like fun projects and I like fun people. I love cool designs. 
+							
+							I always find myself in front of my computer. I still believe that simplicity is a good thing and less is more... and I am proud to say "I love designing".
+							</p>
+							
+							<p class="about">In short, I create <span><i>awesome</i></span> stuff for the web. 
+							</p>
+							
+							</div>
+						</div>
+					
+			
+					<div class="spacer"></div>
+				
+					
+						<div id ="portfolio" class="targets"> </div>
+					
+					<div id="mycontent">
+					<div><h2 class="head-title">Graphics + Web Designs</h2></div>
+					
+					<div id="thumbnail">
+						<a class="testing" href="images/works/big/1.jpg"><img src="images/works/w_john_site.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/2.jpg"><img src="images/works/w_berry.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/3.jpg"><img src="images/works/w_flat.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/4.jpg"><img src="images/works/w_long.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/5.jpg"><img src="images/works/w_john.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/6.jpg"><img src="images/works/w_laster.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/7.jpg"><img src="images/works/w_mma.png"/></a>
+					</div>
+						<div id="thumbnail">
+							<a href="images/works/big/8.jpg"><img src="images/works/w_solo_souls.png"/></a>
+					</div>
+					
+					<div id="thumbnail">
+							<a href="images/works/big/9.jpg"><img src="images/works/w_mma_page.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/10.jpg"><img src="images/works/w_oj.png"/></a>
+					</div>
+					<div id="thumbnail">
+							<a href="images/works/big/11.jpg"><img src="images/works/w_ss.png"/></a>
+					</div>
+						<div id="thumbnail">
+							<a href="images/works/big/12.jpg"><img src="images/works/w_berry2.png"/></a>
+					</div>
+				
+					
+					
+					
+					
+			
+				
+				</div>
+				
+				
+				
+					<div class="spacer"></div>
+					
+					<div class="about-bg">
+						<div class="stones"  data-type="background" data-speed="10" >
+						<section id="mycontent">
+				<div id="resume" class="targets"></div>
+				<div><h2 class="head-title">Resume / Get to know me</h2></div>
+						<div class="new_content">													
+							
+							
+							<h5>John Ray D. Paulin - Web Designer, Programmer</h5>
+							<p>Email: johnraypaulin@gmail.com / Contact No: (+63) 966-352-3468</p>
+							
+							<h5>Career Objective</h5>
+								<p>To build a career in a growing organization, where I can get the opportunities to prove my abilities by accepting challenges, fulfilling the organizational goal and climb the career ladder through continuous learning and commitment.</p>
+							<h5>Skills</h5>
+								<p>Graphics & Web Design, Web Developement, Progressive Web Apps
+							<h5>Technical 
+							</h5>
+							<p>xHTML, CSS, Javascript, jQuery, PHP, MySQL, Java, Visual Basic .Net, Bootstrap, ReactJS, Material UI, Android, Photoshop, Correl Draw, CPanel</p>
+							<h5>Experience</h5>
+							
+								<p>Part-Time Instructor</p>
+								<p>Web Developer</p>
+								<p>Graphics Designer</p>
+								<p>Virtual Assistant</p>
+								<p>Article Writer</p>
+							
+							
+							
+							
+							
+							<!-- <a href="files/johncv.pdf">Download CV as PDF</a> -->
+						
+						</div>
+						</div>
+			</div>
+			</div>
+			</div>
+			
+		<div class="spacer"></div>
+			<div class="container clearfix">
+			<div class="divider">
+			</div>
+		</div>					
+		<?php		
+			include_once('footer.php');	
+		?>
+		
+		
+        
+	</body>
+</html>
